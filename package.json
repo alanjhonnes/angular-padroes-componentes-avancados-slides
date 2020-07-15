@@ -43,8 +43,6 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "monaco-editor": "^0.20.0",
-    "reveal-monaco": "^0.1.1-ALPHA-UNSTABLE",
     "reveal.js-plugins": "^1.0.0"
   }
 }
