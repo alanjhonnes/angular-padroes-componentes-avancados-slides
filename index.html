@@ -1,0 +1,315 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Angular - Padrões Avançados de Componentes</title>
+
+  <link rel="stylesheet"
+        href="css/reset.css">
+  <link rel="stylesheet"
+        href="css/reveal.css">
+  <link rel="stylesheet"
+        href="css/bootstrap-grid.min.css">
+  <link rel="stylesheet"
+        href="css/theme/mjv.css">
+  <link rel="stylesheet"
+        href="css/presentation.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet"
+        href="lib/css/monokai.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h2 class="slide-title">
+          Angular - Padrões Avançados de Componentes<br>
+        </h2>
+        <aside class="notes">
+          
+        </aside>
+      </section>
+      <section>
+        <h2 class="slide-title">Sobre mim</h2>
+        <ul>
+          <li>Alan Jhonnes</li>
+          <li>Arquiteto de Software na MJV</li>
+          <li>4+ anos de experiência com Angular2+</li>
+        </ul>
+
+        <aside class="notes">
+        </aside>
+      </section>
+
+      <section>
+        <h2 class="slide-title">Objetivo</h2>
+        <ul>
+          <li class="fragment">
+            Composição
+          </li>
+          <li class="fragment">
+            Performance
+          </li>
+          <li class="fragment">
+            Flexibilidade
+          </li>
+        </ul>
+        <aside class="notes">
+
+        </aside>
+      </section>
+
+      <section>
+        <h2 class="slide-title">Sumário</h2>
+        <ul>
+          <li class="fragment">
+            Componentes puros
+          </li>
+          <li class="fragment">
+            Comunicação Componente pai/filho
+          </li>
+          <li class="fragment">
+            Content-Projection
+          </li>
+          <li class="fragment">
+            Diretivas para adicionar comportamento à conteúdo
+          </li>
+          <li class="fragment">
+            Customização de templates
+          </li>
+          <li class="fragment">
+            Componentes configuráveis
+          </li>
+          <li class="fragment">
+            Componentes Recursivos
+          </li>
+          <li class="fragment">
+            Componentes dinâmicos
+          </li>
+          <li class="fragment">
+            Mixins
+          </li>
+        </ul>
+        <aside class="notes">
+
+        </aside>
+      </section>
+
+      <section>
+        <h1 class="slide-title">Exemplos</h1>
+      </section>
+      <section>
+        <h2 class="slide-title">Componentes puros</h2>
+        <ul>
+          <li>ChangeDetectionStrategy.OnPush</li>
+          <li>Performance</li>
+          <li>Comunicação via Inputs e Outputs</li>
+          <li>ChangeDetectorRef</li>
+        </ul>
+        <aside class="notes">
+
+        </aside>
+      </section>
+      <section>
+        <h2 class="slide-title">
+          Comunicação Componente pai/filho
+        </h2>
+
+        <ul>
+          <li>@ViewChild/Children</li>
+          <li>Injeção de dependência para referenciar pai</li>
+          <li>Invocar metodos</li>
+        </ul>
+
+        <aside class="notes">
+
+        </aside>
+      </section>
+      <section>
+        <h2 class="slide-title">Content-Projection</h2>
+        <ul>
+          <li>ng-content</li>
+          <li>Fácil composição de componentes</li>
+          <li>Slots de conteúdo</li>
+        </ul>
+
+        <aside class="notes">
+
+        </aside>
+      </section>
+
+      <section>
+        <h2 class="slide-title">
+          Diretivas para adicionar comportamento à conteúdo
+        </h2>
+
+        <ul>
+          <li>ng-content</li>
+          <li>Directive para adicionar comportamento contextual</li>
+          <li>Injeção de componente na diretiva via injeção de dependência hierarquica</li>
+        </ul>
+
+        <p>Casos de uso</p>
+        <ul>
+          <li>Gatilho para alguma ação do componente pai</li>
+          <li>Ex: fechar modal, curtir entidade, abrir/fechar</li>
+        </ul>
+
+
+        <aside class="notes">
+
+        </aside>
+      </section>
+
+      <section>
+        <h2 class="slide-title">
+          Customização de templates
+        </h2>
+
+        <ul>
+          <li>ng-template</li>
+          <li>templateOutlet</li>
+          <li>Template padrão e customizado</li>
+          <li>Contexto</li>
+          <li>$implicit</li>
+        </ul>
+
+        <aside class="notes">
+
+        </aside>
+      </section>
+
+      <section>
+        <h2 class="slide-title">
+          Componentes configuráveis
+        </h2>
+
+        <ul>
+          <li>Objeto de configuração</li>
+          <li>Valor padrão</li>
+          <li>forRoot para customização global</li>
+          <li>Injeção de token para override segmentado</li>
+        </ul>
+
+        <p>Casos de uso:</p>
+        <ul>
+          <li>Configuração de comportamento e aparência padrão</li>
+          <li>Temática de aplicação segmentada</li>
+        </ul>
+
+        <aside class="notes">
+
+        </aside>
+      </section>
+
+      <section>
+        <h2 class="slide-title">
+          Componentes Recursivos
+        </h2>
+
+        <ul>
+          <li>Estrutura de dados em árvore</li>
+          <li>Referencia a si mesmo em seu template</li>
+        </ul>
+
+        <p>Exemplos de aplicação</p>
+
+        <ul>
+          <li>Visualizador de hierarquia</li>
+          <li>Construtor de interface com componentes</li>
+        </ul>
+
+        <aside class="notes">
+
+        </aside>
+      </section>
+
+      <section>
+        <h2 class="slide-title">
+          Componentes dinâmicos
+        </h2>
+
+        <ul>
+          <li>Instanciados de forma programática</li>
+          <li>ComponentFactoryResolver</li>
+          <li>ViewContainerRef</li>
+        </ul>
+
+        <p>Exemplos de aplicações</p>
+
+        <ul>
+          <li>
+            Dashboard de widgets dinâmicos
+          </li>
+          <li>
+            Criação de modais
+          </li>
+        </ul>
+
+        <aside class="notes">
+
+        </aside>
+      </section>
+
+      <section>
+        <h2 class="slide-title">
+          Mixins
+        </h2>
+
+        <ul>
+          <li>Class Mixins</li>
+          <li>Composição de código ao invés de herança</li>
+          <li>Multiplos mixins</li>
+          <li>Alta reusabilidade de código/comportamento</li>
+        </ul>
+
+        <aside class="notes">
+
+        </aside>
+      </section>
+
+
+      <section>
+        <h1>Perguntas</h1>
+      </section>
+      <section>
+        <h1>Obrigado!</h1>
+      </section>
+      </aside>
+    </div>
+
+
+    <script src="js/reveal.js"></script>
+    <script>
+      // @ts-check
+/// <reference path="../node_modules/monaco-editor/monaco.d.ts" />
+/// <reference path="../typings.d.ts" />
+// More info about config & dependencies:
+// - https://github.com/hakimel/reveal.js#configuration
+// - https://github.com/hakimel/reveal.js#dependencies
+Reveal.initialize({
+    width: '1100',
+    dependencies: [
+        { src: 'plugin/notes/notes.js', async: true },
+        // { src: 'plugin/highlight/highlight.js', async: true }
+    ]
+});
+    </script>
+</body>
+
+</html>
